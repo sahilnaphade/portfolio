@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/indexStyle.css">
-    <link rel="stylesheet" href="./../static/contentStyle.css">
+    <link rel="stylesheet" href="./../static/css/indexStyle.css">
+    <link rel="stylesheet" href="./../static/css/contentStyle.css">
     <title>Sahil's portfolio</title>
 </head>
 <body>
@@ -45,10 +45,13 @@
         {% for exp in experience %}
         <div style="border-bottom: 1px dotted whitesmoke; margin-bottom: 15px;">
             <h3>{{ exp.title }}</h3>
-            <h4>{{ exp.company }}</h4><i><h5>{{ exp.startDate }} - {{exp.endDate}}</h5></i><br>
+            <h4>{{ exp.company }}</h4><em><h5>{{ exp.startDate }} - {{exp.endDate}}</h5></em><br>
             <p>{{ exp.description|linebreaks }}</p><br>
         </div>
         {% endfor %}
-    </section>    
+    </section>
+    <section class="education" id="educationSection">
+
+    </section>
 </body>
 </html>
