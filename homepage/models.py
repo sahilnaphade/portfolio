@@ -22,6 +22,7 @@ class education(models.Model):
     degree = models.CharField(max_length=20)
     specialization = models.CharField(max_length=50)
     grade = models.CharField(max_length=30)
+    passingYear = models.DateField(null=True, blank=True)
     location = models.CharField(max_length=100)
     additional_desc = models.TextField(null=True, blank=True)
 
@@ -30,3 +31,20 @@ class education(models.Model):
 
     def __str__(self):
         return self.degree + " at " + self.university
+
+class publication(models.Model):
+    title = models.CharField(max_length=100)
+    journalName = models.CharField(max_length=100)
+    dateOfPub = models.DateField(null=True)
+    DOI = models.CharField(max_length=100)
+    link = models.CharField(max_length=150)
+    indexing = models.CharField(max_length=50, null=True)
+    ISSN = models.CharField(max_length=20, null=True)
+    beginPage = models.IntegerField(default=0)
+    endPage = models.IntegerField(default=0)
+
+    def add_pub(self):
+        self.save()
+    
+    def __str__(self):
+        return self.title + " in " + self.journalName
