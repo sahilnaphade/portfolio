@@ -48,3 +48,16 @@ class publication(models.Model):
     
     def __str__(self):
         return self.title + " in " + self.journalName
+
+class extracurricular(models.Model):
+    org = models.CharField(max_length=100)
+    title = models.CharField(max_length=75)
+    startDate = models.DateField()
+    endDate = models.DateField(blank=True, null=True)
+    description = models.TextField()
+
+    def add_ec(self):
+        self.save()
+
+    def __str__(self):
+        return self.title + " at " + self.org 

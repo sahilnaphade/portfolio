@@ -56,19 +56,19 @@
         ================================================== -->
         <header class="s-header">
 
-            <div class="header-mobile">
-                <span class="mobile-home-link"><a href="index1.html">Sahil N.</a></span>
+            <div class="header-mobile" id="top">
+                <p class="mobile-home-link">Sahil N.</p>
                 <a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
             </div>
 
             <div class="row wide main-nav-wrap">
                 <nav class="column lg-12 main-nav">
                     <ul>
-                        <li><a href="index.html" class="home-link">Sahil N.</a></li>
+                        <li><a href="#" class="home-link">Sahil N.</a></li>
                         <li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
                         <li><a href="#about" class="smoothscroll">About</a></li>
                         <li><a href="#experience" class="smoothscroll">Experience</a></li>
-                        <li><a href="#works" class="smoothscroll">Works</a></li>
+                        <li><a href="#works" class="smoothscroll">Projects</a></li>
                         <li><a href="#contact" class="smoothscroll">Say Hello</a></li>
                     </ul>
                 </nav>
@@ -102,7 +102,7 @@
                     </div>
 
                     <ul class="intro-social">
-                        <li><a href="#0" target="_blank">Instagram</a></li>
+                        <li><a href="https://instagram.com/itsnasa29" target="_blank">Instagram</a></li>
                         <li><a href="mailto:naphadesahil@gmail.com" target="_blank">Gmail</a></li>
                         <li><a href="https://www.linkedin.com/in/sahilnaphade/" target="_blank">LinkedIn</a></li>
                         <li><a href="https://github.com/ItsNaSa" target="_blank">GitHub</a></li>
@@ -140,7 +140,7 @@
                                 Recently, me and my team explored cryptography and filesystems in userspace in Linux;<br> and developed a project around the same. <br>
                                 Lately, I developed a keen interest in dockers, kubernetes and cloud computing and currently exploring the same. <br>
                             </p>
-                            <a href="#0" class="btn btn--medium u-fullwidth" data-animate-el>Download CV</a>
+                            <a href="https://drive.google.com/file/d/1W08Y2juWdOGnnS711y1rrIZy-2YoDAJ9/view?usp=sharing" class="btn btn--medium u-fullwidth" target="_blank" data-animate-el>Download CV</a>
 
                         </div>
                     </div>
@@ -238,7 +238,7 @@
                                     <p>
                                         DOI: <a href="{{ pubs.DOI }}">{{ pubs.DOI }}</a><br>
                                         e-ISSN: {{ pubs.ISSN }} <br>
-                                        Check it <a href="{{ pubs.link }}">here.</a> <br>
+                                        You can check it out <a href="{{ pubs.link }}" target="_blank">here.</a> <br>
                                         Indexing: {{ pubs.indexing }} <br>
                                         Pages: {{ pubs.beginPage }} - {{ pubs.endPage }}
                                     </p>
@@ -248,6 +248,33 @@
     
                         </div> <!-- end timeline -->
                     </div>
+                    <div class="column lg-6 tab-12">
+
+                        <h2 class="text-pretitle" data-animate-el>
+                            Extra-curriculars
+                        </h2>
+
+                        <div class="timeline" data-animate-el>
+                            {% for ec in extracurriculars %}
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">{{ ec.org }}</h3>
+                                    <h5 class="timeline__meta">{{ ec.title }}<br></h5>
+                                    <p class="timeline__timeframe">{{ ec.startDate }} - {% if ec.endDate is None %}
+                                        Present
+                                        {% else %}
+                                        {{ec.endDate}}
+                                        {% endif %}
+                                    </p>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p>{{ ec.description|linebreaks }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                              
+                        </div> <!-- end timeline -->
                 </div>
             </section> <!-- end s-about -->
 
@@ -262,10 +289,10 @@
                     <div class="column lg-12" data-animate-block>
 
                         <h2 class="text-pretitle" data-animate-el>
-                            Recent Works
+                            Projects
                         </h2>
                         <p class="h1" data-animate-el>
-                            Here are some of my favorite projects I have done lately. Feel free to check them out.
+                            Here are some of my favorite projects. Feel free to check them out.
                         </p>
     
                         <ul class="folio-list row block-lg-one-half block-stack-on-1000">
@@ -273,16 +300,15 @@
                             <li class="folio-list__item column" data-animate-el>
                                 <a class="folio-list__item-link" href="#modal-01">
                                     <div class="folio-list__item-pic">
-                                        <img src="{% static 'images/portfolio/fuji.jpg' %}"
-                                             srcset=" {% static 'images/portfolio/fuji.jpg 1x, images/portfolio/fuji@2x.jpg 2x' %}"  alt="">
+                                        <img src="{% static 'images/portfolio/armorfsMain.png' %}" alt="">
                                     </div>
                                     
                                     <div class="folio-list__item-text">
                                         <div class="folio-list__item-cat">
-                                            Website
+                                            Cryptograpy and Filesystems
                                         </div>
                                         <div class="folio-list__item-title">
-                                            Retro Camera.
+                                           ArmorFS.
                                         </div>
                                     </div>
                                 </a>
@@ -294,16 +320,15 @@
                             <li class="folio-list__item column" data-animate-el>
                                 <a class="folio-list__item-link" href="#modal-02">
                                     <div class="folio-list__item-pic">
-                                        <img src="{% static 'images/portfolio/lamp.jpg' %}"
-                                             srcset="{% static 'images/portfolio/lamp.jpg 1x, images/portfolio/lamp@2x.jpg 2x' %}" alt="">
+                                        <img src="{% static 'images/portfolio/diabetes.jpg' %}" alt="Diabetes Predictor">
                                     </div>
                                     
                                     <div class="folio-list__item-text">
                                         <div class="folio-list__item-cat">
-                                            Product Design
+                                            Website and Machine Learning
                                         </div>
                                         <div class="folio-list__item-title">
-                                            The White Lamp.
+                                            Diabetes Predictor.
                                         </div>
                                     </div>
                                 </a>
@@ -315,16 +340,15 @@
                             <li class="folio-list__item column" data-animate-el>
                                 <a class="folio-list__item-link" href="#modal-03">
                                     <div class="folio-list__item-pic">
-                                        <img src="{% static 'images/portfolio/rucksack.jpg' %}" 
-                                             srcset="{% static 'images/portfolio/rucksack.jpg 1x, images/portfolio/rucksack@2x.jpg 2x' %}" alt="">
+                                        <img src="{% static 'images/portfolio/CHMS1.png' %}" alt="">
                                     </div>
                                     
                                     <div class="folio-list__item-text">
                                         <div class="folio-list__item-cat">
-                                            Branding
+                                            Website and Databases
                                         </div>
                                         <div class="folio-list__item-title">
-                                            Rucksuck.
+                                            CHMS.
                                         </div>
                                     </div>
                                 </a>
@@ -336,16 +360,15 @@
                             <li class="folio-list__item column" data-animate-el>
                                 <a class="folio-list__item-link" href="#modal-04">
                                     <div class="folio-list__item-pic">
-                                        <img src="{% static 'images/portfolio/skaterboy.jpg' %}"
-                                             srcset="{% static 'images/portfolio/skaterboy.jpg 1x, images/portfolio/skaterboy@2x.jpg 2x' %}" alt="">
+                                        <img src="{% static 'images/portfolio/Amazon-watches.jpg' %}" alt="">
                                     </div>
                                     
                                     <div class="folio-list__item-text">
                                         <div class="folio-list__item-cat">
-                                            Website
+                                            Data analysis and predictions
                                         </div>
                                         <div class="folio-list__item-title">
-                                            Since Day One.
+                                            Amazon sales dataset analysis.
                                         </div>
                                     </div>
                                 </a>
@@ -353,49 +376,6 @@
                                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
                                 </a>
                             </li> <!--end folio-list__item -->
-
-                            <li class="folio-list__item column" data-animate-el>
-                                <a class="folio-list__item-link" href="#modal-05">
-                                    <div class="folio-list__item-pic">
-                                        <img src="{% static 'images/portfolio/sanddunes.jpg' %}" 
-                                             srcset="{% static 'images/portfolio/sanddunes.jpg 1x, images/portfolio/sanddunes@2x.jpg 2x' %}" alt="">
-                                    </div>
-                                    
-                                    <div class="folio-list__item-text">
-                                        <div class="folio-list__item-cat">
-                                            Illustration
-                                        </div>
-                                        <div class="folio-list__item-title">
-                                            Sand Dunes.
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="folio-list__proj-link" href="#" title="project link">
-                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                                </a>
-                            </li> <!--end folio-list__item -->
-
-                            <li class="folio-list__item column" data-animate-el>
-                                <a class="folio-list__item-link" href="#modal-06">
-                                    <div class="folio-list__item-pic">
-                                        <img src="{% static 'images/portfolio/minimalismo.jpg' %}" 
-                                             srcset="{% static 'images/portfolio/minimalismo.jpg 1x, images/portfolio/minimalismo@2x.jpg 2x' %}" alt="">
-                                    </div>
-                                    
-                                    <div class="folio-list__item-text">
-                                        <div class="folio-list__item-cat">
-                                            Branding
-                                        </div>
-                                        <div class="folio-list__item-title">
-                                            Minimalismo.
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="folio-list__proj-link" href="#" title="project link">
-                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                                </a>
-                            </li> <!--end folio-list__item -->
-
                         </ul> <!-- end folio-list -->
 
                     </div> <!-- end column -->
@@ -405,103 +385,84 @@
                     -------------------------------------------- -->
                     <div id="modal-01" hidden>
                         <div class="modal-popup">
-                            <img src="{% static 'images/portfolio/gallery/g-fuji.jpg' %}" alt="">
+                            <img src="{% static 'images/portfolio/armorfs.png' %}" alt="">
                 
                             <div class="modal-popup__desc">
-                                <h5>Retro Camera</h5>
-                                <p>Odio soluta enim quos sit asperiores rerum rerum repudiandae cum. Vel voluptatem alias qui assumenda iure et expedita voluptatem. Ratione officiis quae.</p>
+                                <h5>ArmorFS</h5>
+                                <p>A cryptpgraphic filesystem in userspace. The filesystem encrypts and decrypts the user's data as per requirements. Userspace ensures that it is usable by each user (even non-root) and linked to each individual.<br>
+                                    Created for the final year project, with sponsorship from <a href="https://www.veritas.com/" target="_blank">Veritas Technologies LLC</a>.
+                                </p>
                                 <ul class="modal-popup__cat">
-                                    <li>Branding</li>
-                                    <li>Product Design</li>
+                                    <li>Cryptography</li>
+                                    <li>Filesystem</li>
+                                    <li>Userspace</li>
                                 </ul>
                             </div>
                 
-                            <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
+                            <!-- <a href="" class="modal-popup__details" target="_blank">Project link</a> -->
                         </div>
                     </div> <!-- end modal -->
 
                     <div id="modal-02" hidden>
                         <div class="modal-popup">
-                            <img src="{% static 'images/portfolio/gallery/g-lamp.jpg' %}" alt="">
+                            <img src="{% static 'images/portfolio/diabetes.jpg' %}" alt="">
                 
                             <div class="modal-popup__desc">
-                                <h5>The White Lamp</h5>
-                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                                <h5>Diabetes Predictor</h5>
+                                <p>A website utilizing machine learning algorithm to predict the diabetes condition of an individual based on different parameters. <br>Used the Pima Indian's <a href="https://www.kaggle.com/uciml/pima-indians-diabetes-database">dataset</a> 
+                                    for the ML algorithm and Flask framework to create the website.</p>
                                 <ul class="modal-popup__cat">
-                                    <li>Branding</li>
+                                    <li>Machine learning</li>
+                                    <li>Flask</li>
+                                    <li>Website</li>
                                 </ul>
                             </div>
                 
-                            <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
+                            <a href="https://github.com/ItsNaSa/Diabetes-Predictor" class="modal-popup__details" target="_blank">Project link</a>
                         </div>
                     </div> <!-- end modal -->
 
                     <div id="modal-03" hidden>
                         <div class="modal-popup">
-                            <img src="{% static 'images/portfolio/gallery/g-rucksack.jpg' %}" alt="">
+                            <img src="{% static 'images/portfolio/CHMS.png' %}" alt="">
                 
                             <div class="modal-popup__desc">
-                                <h5>Rucksuck</h5>
-                                <p>Exercitationem reprehenderit quod explicabo consequatur aliquid ut magni ut. Deleniti quo corrupti illum velit eveniet ratione necessitatibus ipsam mollitia.</p>
+                                <h5>CHMS</h5>
+                                <p>A web-based application in Java to create a centralized healthcare system which will be accessible from anywhere. <br>
+                                    The application recognizes individual doctors and patients to make the addition of new prescriptions and diagnoses seamless. <br>
+                                    Dedicated admin panels allow the central body to add and ban doctors.
+                                </p>
                                 <ul class="modal-popup__cat">
-                                    <li>Product Design</li>
+                                    <li>Website</li>
+                                    <li>Java</li>
+                                    <li>MySQL</li>
+                                    <li>Servlets</li>
                                 </ul>
                             </div>
                 
-                            <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
+                            <a href="https://github.com/ItsNaSa/chms" class="modal-popup__details" target="_blank">Project link</a>
                         </div>
                     </div> <!-- end modal -->
 
                     <div id="modal-04" hidden>
                         <div class="modal-popup">
-                            <img src="{% static 'images/portfolio/gallery/g-skaterboy.jpg' %}" alt="">
+                            <img src="{% static 'images/portfolio/Amazon-watches.jpg' %}" alt="">
                 
                             <div class="modal-popup__desc">
-                                <h5>Since Day One</h5>
-                                <p>Dolores velit qui quos nobis. Aliquam delectus voluptas quos possimus non voluptatem voluptas voluptas. Est doloribus eligendi porro doloribus voluptatum.</p>
+                                <h5>Amazon sales dataset analysis</h5>
+                                <p>
+                                    A mini project to understand the data analysis lifecycle, like collection, cleaning, analysis, visualization and interpretation. <br>
+                                    Amazon Watches dataset available <a href="https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Watches_v1_00.tsv.gz">here</a>  was used to complete the said objectives.
+                                </p>
                                 <ul class="modal-popup__cat">
-                                    <li>Website</li>
+                                    <li>Data analysis</li>
+                                    <li>Market Basket analysis</li>
                                 </ul>
                             </div>
                 
-                            <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
+                            <a href="https://github.com/ItsNaSa/DataScienceMiniProject" class="modal-popup__details" target="_blank">Project link</a>
                         </div>
                     </div> <!-- end modal -->
-
-                    <div id="modal-05" hidden>
-                        <div class="modal-popup">
-
-                            <img src="{% static 'images/portfolio/gallery/g-sanddunes.jpg' %}" alt="">
-                
-                            <div class="modal-popup__desc">
-                                <h5>Sand Dunes</h5>
-                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                                <ul class="modal-popup__cat">
-                                    <li>Illustration</li>
-                                </ul>
-                            </div>
-                
-                            <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
-                        </div>
-                    </div> <!-- end modal -->
-
-                    <div id="modal-06" hidden>
-                        <div class="modal-popup">
-                            <img src="{% static 'images/portfolio/gallery/g-minimalismo.jpg'" alt="">
-                
-                            <div class="modal-popup__desc">
-                                <h5>Minimalismo</h5>
-                                <p>Quisquam vel libero consequuntur autem voluptas. Qui aut vero. Omnis fugit mollitia cupiditate voluptas. Aenean sollicitudin, lorem quis bibendum auctor.</p>
-                                <ul class="modal-popup__cat">
-                                    <li>Branding</li>
-                                    <li>Product Design</li>
-                                </ul>
-                            </div>
-                
-                            <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
-                        </div>
-                    </div> <!-- end modal -->
-
                 </div> <!-- end works-portfolio -->
             </section> <!-- end s-works -->
 
@@ -520,7 +481,8 @@
                             I would love to hear from you.
                             If you want to chat about anything — just shoot me a message.
                         </p>
-                    </div>
+                        <p class="h5">P.S. I also love to talk about new technologies and gadgets.</p>
+                    </div> 
                 </div> <!-- end contact-top -->
 
                 <div class="row contact-bottom">
@@ -535,7 +497,7 @@
                         <ul class="contact-social">
                             <li><a href="https://www.linkedin.com/in/sahilnaphade/" target="_blank">LinkedIn</a></li>
                             <li><a href="https://github.com/ItsNaSa" target="_blank">GitHub</a></li>
-                            <li><a href="#0">Instagram</a></li>
+                            <li><a href="https://instagram.com/itsnasa29">Instagram</a></li>
                         </ul>
                     </div>
                     <div class="column lg-4 md-12 contact-block">
